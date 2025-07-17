@@ -1,3 +1,7 @@
+## 1.19.1
+
+- update zego_zim
+  
 ## 1.19.0
 
 - Features

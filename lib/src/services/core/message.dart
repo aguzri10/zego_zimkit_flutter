@@ -206,10 +206,11 @@ extension ZIMKitCoreMessage on ZIMKitCore {
     }
 
     // 1. create message
-    var kitMessage =
-        (ZIMCustomMessage(subType: customType, message: customMessage)
-              ..searchedContent = searchedContent ?? '')
-            .toKIT();
+    var kitMessage = (ZIMCustomMessage(
+      subType: customType,
+      message: customMessage,
+      searchedContent: searchedContent ?? '',
+    )).toKIT();
     final sendConfig = ZIMMessageSendConfig();
 
     // 2. preMessageSending
