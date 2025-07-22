@@ -34,7 +34,7 @@ class ZIMKitMoreButton extends StatelessWidget {
         showModalBottomSheet(
           context: context,
           builder: (context) {
-            return Container(
+            return SafeArea(child: Container(
               constraints: BoxConstraints(
                 maxHeight: rowPadding * (maxRowCount - 1) +
                     rowHeight * maxRowCount +
@@ -62,7 +62,7 @@ class ZIMKitMoreButton extends StatelessWidget {
                   ),
                 ],
               ),
-            );
+            ),);
           },
         );
       },

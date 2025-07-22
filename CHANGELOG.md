@@ -1,3 +1,8 @@
+## 1.19.2
+
+- Bugs
+  - Fixed the issue where the menu was obscured when the navigation bar was enabled on some Android devices 
+
 ## 1.19.1
 
 - update zego_zim
