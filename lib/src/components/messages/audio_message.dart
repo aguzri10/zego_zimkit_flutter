@@ -51,7 +51,7 @@ class _ZIMKitAudioMessageState extends State<ZIMKitAudioMessage> {
         ),
         overlayShape: SliderComponentShape.noOverlay,
         activeTrackColor: Colors.white,
-        inactiveTrackColor: Colors.white.withOpacity(0.5),
+        inactiveTrackColor: Colors.white.withValues(alpha: 0.5),
       );
 
   @override
@@ -107,7 +107,7 @@ class _ZIMKitAudioMessageState extends State<ZIMKitAudioMessage> {
               borderRadius: BorderRadius.circular(30),
               color: Theme.of(context)
                   .primaryColor
-                  .withOpacity(widget.message.isMine ? 1 : 0.1),
+                  .withValues(alpha: widget.message.isMine ? 1 : 0.1),
             ),
             child: Row(
               children: [

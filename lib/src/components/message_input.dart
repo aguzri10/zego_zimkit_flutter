@@ -72,28 +72,28 @@ class ZIMKitMessageInput extends StatefulWidget {
   ///   ZIMKitMessageInputAction.left(IconButton(
   ///     icon: Icon(
   ///       Icons.mic,
-  ///       color: Theme.of(context).textTheme.bodyText1!.color!.withOpacity(0.64),
+  ///       color: Theme.of(context).textTheme.bodyText1!.color!.withValues(alpha: 0.64),
   ///     ),
   ///     onPressed: () {},
   ///   )),
   ///   ZIMKitMessageInputAction.leftInside(IconButton(
   ///     icon: Icon(
   ///       Icons.sentiment_satisfied_alt_outlined,
-  ///       color: Theme.of(context).textTheme.bodyText1!.color!.withOpacity(0.64),
+  ///       color: Theme.of(context).textTheme.bodyText1!.color!.withValues(alpha: 0.64),
   ///     ),
   ///     onPressed: () {},
   ///   )),
   ///   ZIMKitMessageInputAction.rightInside(IconButton(
   ///     icon: Icon(
   ///       Icons.cabin,
-  ///       color: Theme.of(context).textTheme.bodyText1!.color!.withOpacity(0.64),
+  ///       color: Theme.of(context).textTheme.bodyText1!.color!.withValues(alpha: 0.64),
   ///     ),
   ///     onPressed: () {},
   ///   )),
   ///   ZIMKitMessageInputAction.right(IconButton(
   ///     icon: Icon(
   ///       Icons.sd,
-  ///       color: Theme.of(context).textTheme.bodyText1!.color!.withOpacity(0.64),
+  ///       color: Theme.of(context).textTheme.bodyText1!.color!.withValues(alpha: 0.64),
   ///     ),
   ///     onPressed: () {},
   ///   )),
@@ -147,7 +147,7 @@ class ZIMKitMessageInput extends StatefulWidget {
   ///     BoxShadow(
   ///       offset: const Offset(0, 4),
   ///       blurRadius: 32,
-  ///       color: Theme.of(context).primaryColor.withOpacity(0.15),
+  ///       color: Theme.of(context).primaryColor.withValues(alpha: 0.15),
   ///     ),
   ///   ],
   /// )
@@ -215,7 +215,7 @@ class _ZIMKitMessageInputState extends State<ZIMKitMessageInput> {
                 BoxShadow(
                   offset: const Offset(0, 4),
                   blurRadius: 32,
-                  color: Theme.of(context).primaryColor.withOpacity(0.15),
+                  color: Theme.of(context).primaryColor.withValues(alpha: 0.15),
                 ),
               ],
             ),
@@ -264,7 +264,7 @@ class _ZIMKitMessageInputState extends State<ZIMKitMessageInput> {
         padding: const EdgeInsets.symmetric(horizontal: 15),
         decoration: widget.inputBackgroundDecoration ??
             BoxDecoration(
-              color: Theme.of(context).primaryColor.withOpacity(0.05),
+              color: Theme.of(context).primaryColor.withValues(alpha: 0.05),
               borderRadius: BorderRadius.circular(40),
             ),
         child: Row(
@@ -442,7 +442,7 @@ class _ZIMKitMessageInputState extends State<ZIMKitMessageInput> {
           ? BoxDecoration(
               color: text.isNotEmpty
                   ? Theme.of(context).primaryColor
-                  : Theme.of(context).primaryColor.withOpacity(0.6),
+                  : Theme.of(context).primaryColor.withValues(alpha: 0.6),
               shape: BoxShape.circle,
             )
           : null,

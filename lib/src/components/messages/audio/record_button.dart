@@ -262,7 +262,7 @@ class _ZIMKitRecordButtonState extends State<ZIMKitRecordButton>
                       .textTheme
                       .bodyLarge!
                       .color!
-                      .withOpacity(0.64),
+                      .withValues(alpha: 0.64),
                 ),
           );
         },

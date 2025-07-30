@@ -46,7 +46,7 @@ class ZIMKitTextMessage extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: Theme.of(context)
                       .primaryColor
-                      .withOpacity(message.isMine ? 1 : 0.1),
+                      .withValues(alpha: message.isMine ? 1 : 0.1),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 padding:

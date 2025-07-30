@@ -26,7 +26,7 @@ class ZIMKitTextMessagePointer extends StatelessWidget {
       height: messagePointerWidth,
       child: CustomPaint(
         painter: ZIMKitMessageTrianglePainter(
-          color: Theme.of(context).primaryColor.withOpacity(isMine ? 1 : 0.1),
+          color: Theme.of(context).primaryColor.withValues(alpha: isMine ? 1 : 0.1),
           isMine: isMine,
         ),
       ),

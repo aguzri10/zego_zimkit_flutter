@@ -22,7 +22,7 @@ class ZIMKitPickMediaButton extends StatelessWidget {
           Icon(
             Icons.photo_library,
             color:
-                Theme.of(context).textTheme.bodyLarge!.color!.withOpacity(0.64),
+                Theme.of(context).textTheme.bodyLarge!.color!.withValues(alpha: 0.64),
           ),
     );
   }
