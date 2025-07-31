@@ -54,12 +54,14 @@ class ZIMKit
     String appSign = '',
     String appSecret = '',
     ZegoZIMKitNotificationConfig? notificationConfig,
+    required Future<String> Function() onTokenWillExpire,
   }) async {
     return ZIMKitCore.instance.init(
       appID: appID,
       appSign: appSign,
       appSecret: appSecret,
       notificationConfig: notificationConfig,
+      onTokenWillExpire: onTokenWillExpire,
     );
   }
 

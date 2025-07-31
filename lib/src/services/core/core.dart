@@ -90,6 +90,7 @@ class ZIMKitCore
     String appSign = '',
     String appSecret = '',
     ZegoZIMKitNotificationConfig? notificationConfig,
+    required Future<String> Function() onTokenWillExpire,
   }) async {
     if (isInited) {
       ZIMKitLogger.logInfo('has inited.');
@@ -105,6 +106,18 @@ class ZIMKitCore
     );
 
     initEventHandler();
+
+    ZegoUIKitSignalingPlugin()
+      .getTokenWillExpireEventStream()
+      .listen((event) async {
+    try {
+      final newToken = await onTokenWillExpire();
+      await ZegoUIKitSignalingPlugin().renewToken(newToken);
+      ZIMKitLogger.logInfo('[ZIM] Token renewed successfully');
+    } catch (e) {
+      ZIMKitLogger.logError('[ZIM] Token renewal failed: $e');
+    }
+  });
 
     this.appID = appID;
     this.appSign = appSign;

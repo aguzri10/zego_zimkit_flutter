@@ -55,7 +55,7 @@ extension ZIMMessageExtend on ZIMMessage {
         ..sentStatus = sentStatus
         ..conversationType = conversationType
         ..timestamp = timestamp
-        ..conversationSeq = conversationSeq
+        ..conversationSeq = messageSeq
         ..orderKey = orderKey
         ..isUserInserted = isUserInserted
         ..receiptStatus = receiptStatus);
@@ -215,6 +215,9 @@ extension ZIMKitMessageExtend on ZIMKitMessage {
         // TODO: Handle this case.
         break;
       case ZIMMessageType.combine:
+        // TODO: Handle this case.
+        break;
+      case ZIMMessageType.multiple:
         // TODO: Handle this case.
         break;
     }
@@ -385,9 +388,9 @@ extension ZIMGroupFullInfoExtension on ZIMGroupFullInfo {
 extension ZIMGroupExtension on ZIMGroup {
   ZIMKitConversation toConversation() {
     return ZIMKitConversation()
-      ..id = baseInfo?.groupID ?? ''
-      ..name = baseInfo?.groupName ?? ''
-      ..avatarUrl = baseInfo?.groupAvatarUrl ?? ''
+      ..id = baseInfo.groupID
+      ..name = baseInfo.groupName
+      ..avatarUrl = baseInfo.groupAvatarUrl
       ..type = ZIMKitConversationType.group
       ..notificationStatus =
           (notificationStatus == ZIMGroupMessageNotificationStatus.notify
@@ -395,11 +398,11 @@ extension ZIMGroupExtension on ZIMGroup {
               : ZIMConversationNotificationStatus.doNotDisturb);
   }
 
-  String get id => baseInfo?.groupID ?? '';
+  String get id => baseInfo.groupID;
 
-  String get name => baseInfo?.groupName ?? '';
+  String get name => baseInfo.groupName;
 
-  String get url => baseInfo?.groupAvatarUrl ?? '';
+  String get url => baseInfo.groupAvatarUrl;
 }
 
 extension ZIMGroupInfoExtension on ZIMGroupInfo {
