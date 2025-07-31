@@ -5,11 +5,13 @@ mixin ZIMKitUserService {
     required String id,
     String name = '',
     String avatarUrl = '',
+    String token = '',
   }) async {
     return ZIMKitCore.instance.connectUser(
       id: id,
       name: name,
       avatarUrl: avatarUrl,
+      token: token,
     );
   }
 
