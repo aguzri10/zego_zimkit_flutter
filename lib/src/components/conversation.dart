@@ -1,6 +1,7 @@
 import 'dart:math';
 
 import 'package:flutter/material.dart';
+import 'package:zego_uikit_signaling_plugin/zego_uikit_signaling_plugin.dart';
 
 import 'package:zego_zimkit/src/services/services.dart';
 
@@ -132,10 +133,33 @@ class ZIMKitConversationWidget extends StatelessWidget {
 
     return Opacity(
       opacity: 0.64,
-      child: Text(
-        message.toStringValue(),
-        maxLines: 1,
-        overflow: TextOverflow.ellipsis,
+      child: Row(
+        children: [
+          if (message.type == ZIMMessageType.image) ...[
+            const Icon(
+              Icons.image_rounded,
+              size: 14,
+            ),
+            const SizedBox(width: 4),
+          ] else if (message.type == ZIMMessageType.audio) ...[
+            const Icon(
+              Icons.keyboard_voice_rounded,
+              size: 14,
+            ),
+            const SizedBox(width: 4),
+          ] else if (message.type == ZIMMessageType.file) ...[
+            const Icon(
+              Icons.file_copy_rounded,
+              size: 14,
+            ),
+            const SizedBox(width: 4),
+          ],
+          Text(
+            message.toStringValue(),
+            maxLines: 1,
+            overflow: TextOverflow.ellipsis,
+          ),
+        ],
       ),
     );
   }

@@ -151,6 +151,12 @@ extension ZIMKitMessageExtend on ZIMKitMessage {
     switch (type) {
       case ZIMKitMessageType.text:
         return textContent!.text;
+      case ZIMKitMessageType.image:
+        return 'Image';
+      case ZIMKitMessageType.audio:
+        return 'Audio';
+      case ZIMKitMessageType.file:
+        return 'File';
       case ZIMKitMessageType.revoke:
         return 'Recalled a message';
       default:
