@@ -51,12 +51,20 @@ class ZegoZIMKitAndroidNotificationConfig {
 
   bool vibrate;
 
+  /// Whether to display a offline pop-up window.
+  ///
+  /// If used in conjunction with zego_uikit_prebuilt_call,
+  /// zego_uikit_prebuilt_call will handle offline notifications,
+  /// and in this case, it should be set to false
+  bool enable;
+
   ZegoZIMKitAndroidNotificationConfig({
     this.channelID = 'ZIM Message',
     this.channelName = 'Message',
     this.icon = '',
     this.sound = '',
     this.vibrate = false,
+    this.enable = true,
   });
 }
 
