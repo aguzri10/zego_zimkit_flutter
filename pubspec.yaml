@@ -23,7 +23,10 @@ dependencies:
   cached_network_image: ^3.3.0
   permission_handler: ^11.3.1
   encrypt: ^5.0.3
-  flutter_logs: ^2.2.1
+  flutter_logs:
+    git:
+      url: https://github.com/yoer/flutter_logs.git
+      ref: master
   async: ^2.0.0
   video_player: ^2.7.2
   file_picker: ^10.1.2

@@ -5,7 +5,7 @@ import 'package:flutter_logs/flutter_logs.dart';
 class ZIMKitLogger {
   static bool isZimKitLoggerInit = false;
 
-  Future<void> initLog({String folderName = 'uikit'}) async {
+  Future<void> initLog() async {
     if (isZimKitLoggerInit) {
       return;
     }
@@ -22,8 +22,8 @@ class ZIMKitLogger {
               directoryStructure: DirectoryStructure.SINGLE_FILE_FOR_DAY,
               logTypesEnabled: ['device', 'network', 'errors'],
               logFileExtension: LogFileExtension.LOG,
-              logsWriteDirectoryName: 'zego_prebuilt/$folderName',
-              logsExportDirectoryName: 'zego_prebuilt/$folderName/Exported',
+              logsWriteDirectoryName: 'zego_prebuilt',
+              logsExportDirectoryName: 'zego_prebuilt/Exported',
               debugFileOperations: true,
               isDebuggable: true)
           .then((value) {
