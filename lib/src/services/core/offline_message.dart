@@ -50,13 +50,19 @@ mixin ZIMKitOfflineMessage {
 
     if (Platform.isAndroid) {
       ZIMKitLogger.logInfo(
-        'offline message, register background message handler',
+        'offline message, register android background message handler',
       );
 
-      await ZegoPluginAdapter().signalingPlugin?.setBackgroundMessageHandler(
-            onBackgroundMessageReceived,
-            key: 'zego_zimkit',
-          );
+      if (notificationConfig?.androidNotificationConfig?.enable ?? true) {
+        await ZegoPluginAdapter().signalingPlugin?.setBackgroundMessageHandler(
+              onBackgroundMessageReceived,
+              key: 'zego_zimkit',
+            );
+      } else {
+        ZIMKitLogger.logWarn(
+          'offline message, android background message handler not registered',
+        );
+      }
     } else if (Platform.isIOS) {
       ///
     }

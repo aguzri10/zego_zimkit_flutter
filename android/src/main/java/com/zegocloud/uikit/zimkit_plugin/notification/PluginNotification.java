@@ -63,7 +63,8 @@ public class PluginNotification {
                 .setSound(retrieveSoundResourceUri(context, soundSource))
                 .setPriority(NotificationCompat.PRIORITY_HIGH)
                 .setAutoCancel(true)
-                .setOngoing(true)
+                // can cancel
+                .setOngoing(false)
                 /// vibrate if < Build.VERSION_CODES.O
                 .setStyle(new NotificationCompat.DecoratedCustomViewStyle());
 

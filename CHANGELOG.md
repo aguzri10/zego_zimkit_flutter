@@ -1,3 +1,8 @@
+## 1.19.3
+
+- Bugs
+  - Fixed the issue of the offline notification popping up twice when used with zego_uikit_prebuilt_call
+
 ## 1.19.2
 
 - Bugs
