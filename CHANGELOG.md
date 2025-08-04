@@ -1,8 +1,21 @@
 ## 1.19.3
 
 - Bugs
-  - Fixed the issue of the offline notification popping up twice when used with zego_uikit_prebuilt_call
-
+  - Fixed the issue of the offline notification popping up twice when used with zego_uikit_prebuilt_call, For mixed usage scenarios.
+    Please set the `enable` of `androidNotificationConfig` to false 
+    like follows:
+    ``` dart
+    await ZIMKit().init(
+        ...
+        notificationConfig: ZegoZIMKitNotificationConfig(
+          ...
+          androidNotificationConfig: ZegoZIMKitAndroidNotificationConfig(
+            ...
+            enable: false,
+          ),
+        ),
+      )
+    ```
 ## 1.19.2
 
 - Bugs
