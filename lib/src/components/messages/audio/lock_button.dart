@@ -29,9 +29,9 @@ class _ZIMKitRecordLockerState extends State<ZIMKitRecordLocker> {
         return ValueListenableBuilder(
           valueListenable: widget.processor.lockerStateNotifier,
           builder: (context, lockerState, _) {
-            var color = Colors.grey.withOpacity(0.4);
+            var color = Colors.grey.withValues(alpha: 0.4);
             if (lockerState == ZIMKitRecordLockerState.testing) {
-              color = Colors.green.withOpacity(0.4);
+              color = Colors.green.withValues(alpha: 0.4);
             }
 
             return recordState == ZIMKitRecordState.recording &&

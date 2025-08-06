@@ -13,7 +13,7 @@ class ZIMKitMessageStatusDot extends StatelessWidget {
       case ZIMMessageSentStatus.failed:
         return Theme.of(context).colorScheme.error;
       case ZIMMessageSentStatus.sending:
-        return Theme.of(context).textTheme.bodyLarge!.color!.withOpacity(0.1);
+        return Theme.of(context).textTheme.bodyLarge!.color!.withValues(alpha: 0.1);
       case ZIMMessageSentStatus.success:
         return Theme.of(context).primaryColor;
       default:

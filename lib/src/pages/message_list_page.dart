@@ -153,7 +153,7 @@ class ZIMKitMessageListPage extends StatefulWidget {
   ///     BoxShadow(
   ///       offset: const Offset(0, 4),
   ///       blurRadius: 32,
-  ///       color: Theme.of(context).primaryColor.withOpacity(0.15),
+  ///       color: Theme.of(context).primaryColor.withValues(alpha: 0.15),
   ///     ),
   ///   ],
   /// )

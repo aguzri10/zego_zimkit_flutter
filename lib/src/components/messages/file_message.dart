@@ -35,7 +35,7 @@ class ZIMKitFileMessage extends StatelessWidget {
           decoration: BoxDecoration(
             color: Theme.of(context)
                 .primaryColor
-                .withOpacity(message.isMine ? 1 : 0.15),
+                .withValues(alpha: message.isMine ? 1 : 0.15),
             borderRadius: BorderRadius.circular(8),
           ),
           child: Row(
