@@ -41,12 +41,12 @@ extension ZIMKitCoreGroup on ZIMKitCore {
             .then((ZIMGroupListQueriedResult zimResult) {
           var gotIt = false;
           for (final group in zimResult.groupList) {
-            if (group.baseInfo!.id == id) {
+            if (group.baseInfo.id == id) {
               final kitConversation =
                   db.conversations.get(id, ZIMKitConversationType.group);
               kitConversation.value = kitConversation.value.clone()
-                ..name = group.baseInfo!.name
-                ..avatarUrl = group.baseInfo!.url;
+                ..name = group.baseInfo.name
+                ..avatarUrl = group.baseInfo.url;
               gotIt = true;
               break;
             }

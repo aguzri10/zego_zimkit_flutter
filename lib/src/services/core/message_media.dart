@@ -87,7 +87,7 @@ extension ZIMKitCoreMessageMedia on ZIMKitCore {
             },
             onMediaUploadingProgress:
                 (message, currentFileSize, totalFileSize) {
-              final zimMessage = message as ZIMMediaMessage;
+              final zimMessage = message;
               ZIMKitLogger.logInfo(
                   'onMediaUploadingProgress: ${zimMessage.fileName}, $currentFileSize/$totalFileSize');
 

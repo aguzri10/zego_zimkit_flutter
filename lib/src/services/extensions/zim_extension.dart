@@ -217,6 +217,9 @@ extension ZIMKitMessageExtend on ZIMKitMessage {
       case ZIMMessageType.combine:
         // TODO: Handle this case.
         break;
+      case ZIMMessageType.multiple:
+        // TODO: Handle this case.
+        break;
     }
     if (zim is ZIMVideoMessage) {
       (zim as ZIMVideoMessage).videoFirstFrameDownloadUrl =
@@ -385,9 +388,9 @@ extension ZIMGroupFullInfoExtension on ZIMGroupFullInfo {
 extension ZIMGroupExtension on ZIMGroup {
   ZIMKitConversation toConversation() {
     return ZIMKitConversation()
-      ..id = baseInfo?.groupID ?? ''
-      ..name = baseInfo?.groupName ?? ''
-      ..avatarUrl = baseInfo?.groupAvatarUrl ?? ''
+      ..id = baseInfo.groupID
+      ..name = baseInfo.groupName
+      ..avatarUrl = baseInfo.groupAvatarUrl
       ..type = ZIMKitConversationType.group
       ..notificationStatus =
           (notificationStatus == ZIMGroupMessageNotificationStatus.notify
@@ -395,11 +398,11 @@ extension ZIMGroupExtension on ZIMGroup {
               : ZIMConversationNotificationStatus.doNotDisturb);
   }
 
-  String get id => baseInfo?.groupID ?? '';
+  String get id => baseInfo.groupID;
 
-  String get name => baseInfo?.groupName ?? '';
+  String get name => baseInfo.groupName;
 
-  String get url => baseInfo?.groupAvatarUrl ?? '';
+  String get url => baseInfo.groupAvatarUrl;
 }
 
 extension ZIMGroupInfoExtension on ZIMGroupInfo {
