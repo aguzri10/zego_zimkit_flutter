@@ -6,7 +6,6 @@ import 'dart:ui';
 
 import 'package:flutter/cupertino.dart';
 import 'package:zego_plugin_adapter/zego_plugin_adapter.dart';
-import 'package:zego_zpns/zego_zpns.dart';
 
 import 'package:zego_zimkit/src/callkit/notification_manager.dart';
 import 'package:zego_zimkit/src/callkit/variables.dart';
@@ -26,7 +25,8 @@ const backgroundMessageIsolatePortName = 'zimkit_bg_msg_isolate_port';
 ///
 /// Note: @pragma('vm:entry-point') must be placed on a function to indicate that it can be parsed, allocated, or called directly from native or VM code in AOT mode.
 @pragma('vm:entry-point')
-Future<void> onBackgroundMessageReceived(ZPNsMessage message) async {
+Future<void> onBackgroundMessageReceived(
+    ZegoSignalingPluginMessage message) async {
   debugPrint('onBackgroundMessageReceived wait init log...');
 
   await ZIMKitLogger().initLog();
