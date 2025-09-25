@@ -5,6 +5,7 @@ extension ZIMKitCoreUser on ZIMKitCore {
     required String id,
     String name = '',
     String avatarUrl = '',
+    String token = '',
   }) async {
     if (!isInited) {
       ZIMKitLogger.logInfo('is not inited.');
@@ -32,8 +33,11 @@ extension ZIMKitCoreUser on ZIMKitCore {
     );
 
     ZIMKitLogger.logInfo('ready to login..');
-    final connectResult =
-        await ZegoUIKitSignalingPlugin().connectUser(id: id, name: name);
+    final connectResult = await ZegoUIKitSignalingPlugin().connectUser(
+      id: id,
+      name: name,
+      token: token,
+    );
 
     if (connectResult.error == null) {
       ZIMKitLogger.logInfo('login success');
